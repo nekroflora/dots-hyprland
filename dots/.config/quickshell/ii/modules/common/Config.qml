@@ -221,6 +221,7 @@ Singleton {
                     property bool showItemId: false
                     property bool invertPinnedItems: true // Makes the below a whitelist for the tray and blacklist for the pinned area
                     property list<string> pinnedItems: [ ]
+                    property bool filterPassive: true
                 }
                 property JsonObject workspaces: JsonObject {
                     property bool monochromeIcons: true
@@ -367,7 +368,7 @@ Singleton {
                 }
                 property JsonObject circle: JsonObject {
                     property int strokeWidth: 6
-                    property int padding: 30
+                    property int padding: 10
                 }
             }
 
@@ -482,8 +483,8 @@ Singleton {
 
             property JsonObject workSafety: JsonObject {
                 property JsonObject enable: JsonObject {
-                    property bool wallpaper: true
-                    property bool clipboard: true
+                    property bool wallpaper: false
+                    property bool clipboard: false
                 }
                 property JsonObject triggerCondition: JsonObject {
                     property list<string> networkNameKeywords: ["airport", "cafe", "college", "company", "eduroam", "free", "guest", "public", "school", "university"]
