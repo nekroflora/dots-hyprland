@@ -35,8 +35,8 @@ Scope {
                 right: true
             }
 
-            implicitWidth: content.implicitWidth + content.visualMargin * 2
-            implicitHeight: content.implicitHeight + content.visualMargin * 2
+            implicitWidth: content.implicitWidth
+            implicitHeight: content.implicitHeight
 
             HyprlandFocusGrab {
                 id: focusGrab
@@ -55,7 +55,6 @@ Scope {
             ActionCenterContent {
                 id: content
                 anchors.fill: parent
-                anchors.margins: visualMargin
 
                 focus: true
                 Keys.onPressed: event => { // Esc to close
@@ -65,8 +64,8 @@ Scope {
                 }
 
                 onClosed: {
-                    barLoader.active = false;
                     GlobalStates.sidebarLeftOpen = false;
+                    barLoader.active = false;
                 }
             }
         }
