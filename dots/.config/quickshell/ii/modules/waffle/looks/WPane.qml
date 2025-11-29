@@ -14,9 +14,10 @@ Item {
     property real radius: Looks.radius.large
     property alias border: borderRect
     property alias borderColor: borderRect.border.color
+    property alias borderWidth: borderRect.border.width
 
-    implicitWidth: contentItem.implicitWidth
-    implicitHeight: contentItem.implicitHeight
+    implicitWidth: borderRect.implicitWidth
+    implicitHeight: borderRect.implicitHeight
 
     WRectangularShadow {
         target: borderRect
